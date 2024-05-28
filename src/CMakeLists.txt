@@ -1,8 +1,19 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.13)
 
-project(Plugin LANGUAGES CXX)
+project(c-style-project)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(LLVM REQUIRED CONFIG)
+list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
+include(AddLLVM)
 
-add_executable(Plugin main.cpp)
+add_definitions(${LLVM_DEFINITIONS})
+
+include_directories(${LLVM_INCLUDE_DIRS})
+include_directories(${CLANG_INCLUDE_DIRS})
+
+add_llvm_library(c-style MODULE main.cpp)
+
+set_target_properties(c-style PROPERTIES
+    COMPILE_FLAGS "-fno-rtti"
+)
+
