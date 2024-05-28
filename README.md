@@ -17,7 +17,8 @@ This plugin analyzes C and C++ source code and reports warnings for function nam
    - Use CMake to build the plugin.
    - Example:
      ```sh
-     mkdir build
+     sudo apt install libclang-dev
+     mkdir src/build
      cd build
      cmake ..
      make
