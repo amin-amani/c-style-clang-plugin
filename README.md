@@ -1,9 +1,9 @@
 # c-style-clang-plugin
-A Clang plugin to check if function names follow the snake_case naming convention.
+A Clang plugin to check if function names , variables , etc follow the SINA naming convention.
 
 ## Overview
 
-This plugin analyzes C and C++ source code and reports warnings for function names that do not adhere to the snake_case naming convention. Snake case is a naming convention where each word is lowercase and separated by underscores, e.g., `my_function_name`.
+This plugin analyzes C and C++ source code and reports warnings for function names that do not adhere to the SINA naming convention. 
 
 ## Features
 
