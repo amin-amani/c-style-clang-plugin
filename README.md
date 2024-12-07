@@ -47,7 +47,7 @@ This plugin analyzes C and C++ source code and reports warnings for function nam
    - Use CMake to build the plugin.
    - Example:
      ```sh
-     sudo apt install libclang-dev llvm-dev
+     sudo apt install libclang-dev llvm-dev clan-15
      mkdir src/build
      cd build
      cmake ..
@@ -57,11 +57,17 @@ This plugin analyzes C and C++ source code and reports warnings for function nam
 2. **Run the Plugin**:
    - Apply the plugin to your C or C++ source files using Clang.
    - Example:
-     ```sh
+     ```
      clang-15 -Xclang -load -Xclang ./c-style.so -Xclang -plugin -Xclang hello -c ./sample/snake-case-func.c
      ```
+   without plugin
 
-3. **Check Output**:
+   ```
+   clang-15 -v -c /home/pmu/firmware/Core/Src/main.c -I /home/pmu/firmware/Drivers/STM32F4xx_HAL_Driver/Inc/ -I /home/pmu/firmware/Core/Inc/ -I              /home/pmu/firmware/Drivers/CMSIS/Device/ST/STM32F4xx/Include -ferror-limit=5000
+   ```
+
+
+4. **Check Output**:
    - Review the compiler output for warnings regarding non-compliant function names.
 
 ## Contributing
